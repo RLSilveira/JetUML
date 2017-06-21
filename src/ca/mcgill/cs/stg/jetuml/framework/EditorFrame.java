@@ -92,6 +92,7 @@ import ca.mcgill.cs.stg.jetuml.graph.Node;
 @SuppressWarnings("serial")
 public class EditorFrame extends JFrame
 {
+	
 	private static final int FRAME_GAP = 20;
 	private static final int ESTIMATED_FRAMES = 5;
 	private static final int MAX_RECENT_FILES = 8;
@@ -591,7 +592,7 @@ public class EditorFrame extends JFrame
    	public void addWelcomeTab()
    	{
    		aWelcomeTab = new WelcomeTab(aNewMenu, aRecentFilesMenu);
-     	aTabbedPane.add("Welcome", aWelcomeTab);
+     	aTabbedPane.add(aEditorResources.getString("welcome.text"), aWelcomeTab);
      	aTabs.add(aWelcomeTab);
    	}
    
