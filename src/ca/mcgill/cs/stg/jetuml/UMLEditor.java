@@ -29,6 +29,7 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import ca.mcgill.cs.stg.jetuml.diagrams.ActivityDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.ClassDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.ObjectDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.SequenceDiagramGraph;
@@ -70,7 +71,7 @@ public final class UMLEditor
 			{
 				setLookAndFeel();
 				EditorFrame frame = new EditorFrame(UMLEditor.class);
-				frame.addGraphType("activity_diagram", ClassDiagramGraph.class);
+				frame.addGraphType("activity_diagram", ActivityDiagramGraph.class);
 				frame.addGraphType("class_diagram", ClassDiagramGraph.class);
 				frame.addGraphType("sequence_diagram", SequenceDiagramGraph.class);
 				frame.addGraphType("state_diagram", StateDiagramGraph.class);

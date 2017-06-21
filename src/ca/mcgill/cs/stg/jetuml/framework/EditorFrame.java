@@ -74,8 +74,10 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 import ca.mcgill.cs.stg.jetuml.UMLEditor;
+import ca.mcgill.cs.stg.jetuml.diagrams.ActivityDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.ClassDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.ObjectDiagramGraph;
+import ca.mcgill.cs.stg.jetuml.diagrams.SequenceDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.StateDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.diagrams.UseCaseDiagramGraph;
 import ca.mcgill.cs.stg.jetuml.graph.Edge;
@@ -572,9 +574,17 @@ public class EditorFrame extends JFrame
    				{
    					diagramName = "State Diagram";
    				}
+   				else if(graphType instanceof SequenceDiagramGraph)
+   				{
+   					diagramName = "Sequence Diagram";
+   				}
+   				else if(graphType instanceof ActivityDiagramGraph)
+   				{
+   					diagramName = "Activity Diagram";
+   				}
    				else
    				{
-   					diagramName =  "Sequence Diagram";
+   					diagramName =  "Unkown Diagram";
    				}
    				return diagramName;
    			}
@@ -687,7 +697,9 @@ public class EditorFrame extends JFrame
    			new ExtensionFilter(aAppResources.getString("usecase.name"), 
    						aAppResources.getString("usecase.extension") + aAppResources.getString("files.extension")),
    			new ExtensionFilter(aAppResources.getString("sequence.name"), 
-   						aAppResources.getString("sequence.extension") + aAppResources.getString("files.extension"))
+						aAppResources.getString("sequence.extension") + aAppResources.getString("files.extension")),
+   			new ExtensionFilter(aAppResources.getString("activity.name"), 
+						aAppResources.getString("activity.extension") + aAppResources.getString("files.extension"))
    		};
    		for(ExtensionFilter filter: filters)
 		{

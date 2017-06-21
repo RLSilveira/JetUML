@@ -43,7 +43,7 @@ import ca.mcgill.cs.stg.jetuml.graph.PackageNode;
 /**
  *  A UML class diagram.
  */
-public class ClassDiagramGraph extends Graph
+public class ActivityDiagramGraph extends Graph
 {
 	private static final Node[] NODE_PROTOTYPES = new Node[] {new ClassNode(), 
 															  new InterfaceNode(), 
@@ -73,13 +73,13 @@ public class ClassDiagramGraph extends Graph
 	@Override
 	public String getFileExtension() 
 	{
-		return ResourceBundle.getBundle("ca.mcgill.cs.stg.jetuml.UMLEditorStrings").getString("activity.extension");
+		return ResourceBundle.getBundle("ca.mcgill.cs.stg.jetuml.UMLEditorStrings").getString("class.extension");
 	}
 
 	@Override
 	public String getDescription() 
 	{
-		return ResourceBundle.getBundle("ca.mcgill.cs.stg.jetuml.UMLEditorStrings").getString("activity.name");
+		return ResourceBundle.getBundle("ca.mcgill.cs.stg.jetuml.UMLEditorStrings").getString("class.name");
 	}
 
 	private static boolean canAddNodeAsChild(Node pPotentialChild)
