@@ -561,31 +561,38 @@ public class EditorFrame extends JFrame
    				Graph graphType = frame.getGraph();
    				if(graphType instanceof ClassDiagramGraph)
    				{
-   					diagramName = "Class Diagram";
+   					//diagramName = "Class Diagram";
+   					diagramName = aAppResources.getString("class_diagram.text");
    				}
    				else if(graphType instanceof ObjectDiagramGraph)
    				{
-   					diagramName = "Object Diagram";
+   					//diagramName = "Object Diagram";
+   					diagramName = aAppResources.getString("object_diagram.text");
    				}
    				else if(graphType instanceof UseCaseDiagramGraph)
    				{
-   					diagramName = "Use Case Diagram";
+   					//diagramName = "Use Case Diagram";
+   					diagramName = aAppResources.getString("usecase_diagram.text");
    				}
    				else if(graphType instanceof StateDiagramGraph)
    				{
-   					diagramName = "State Diagram";
+   					//diagramName = "State Diagram";
+   					diagramName = aAppResources.getString("state_diagram.text");
    				}
    				else if(graphType instanceof SequenceDiagramGraph)
    				{
-   					diagramName = "Sequence Diagram";
+   					//diagramName = "Sequence Diagram";
+   					diagramName = aAppResources.getString("sequence_diagram.text");
    				}
    				else if(graphType instanceof ActivityDiagramGraph)
    				{
-   					diagramName = "Activity Diagram";
+   					//diagramName = "Activity Diagram";
+   					diagramName = aAppResources.getString("activity_diagram.text");
    				}
    				else
    				{
-   					diagramName =  "Unkown Diagram";
+   					//diagramName =  "Unkown Diagram";
+   					diagramName = aAppResources.getString("unkown_diagram.text");
    				}
    				return diagramName;
    			}
