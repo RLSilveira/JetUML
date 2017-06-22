@@ -29,34 +29,50 @@ import java.util.ResourceBundle;
 import ca.mcgill.cs.stg.jetuml.graph.AggregationEdge;
 import ca.mcgill.cs.stg.jetuml.graph.AssociationEdge;
 import ca.mcgill.cs.stg.jetuml.graph.ChildNode;
+import ca.mcgill.cs.stg.jetuml.graph.CircularStateNode;
 import ca.mcgill.cs.stg.jetuml.graph.ClassNode;
 import ca.mcgill.cs.stg.jetuml.graph.DependencyEdge;
 import ca.mcgill.cs.stg.jetuml.graph.Edge;
 import ca.mcgill.cs.stg.jetuml.graph.GeneralizationEdge;
 import ca.mcgill.cs.stg.jetuml.graph.Graph;
+import ca.mcgill.cs.stg.jetuml.graph.ImplicitParameterNode;
 import ca.mcgill.cs.stg.jetuml.graph.InterfaceNode;
 import ca.mcgill.cs.stg.jetuml.graph.Node;
 import ca.mcgill.cs.stg.jetuml.graph.NoteEdge;
 import ca.mcgill.cs.stg.jetuml.graph.NoteNode;
 import ca.mcgill.cs.stg.jetuml.graph.PackageNode;
+import ca.mcgill.cs.stg.jetuml.graph.StateNode;
 
 /**
  *  A UML class diagram.
  */
 public class ActivityDiagramGraph extends Graph
 {
-	private static final Node[] NODE_PROTOTYPES = new Node[] {new ClassNode(), 
-															  new InterfaceNode(), 
-															  new PackageNode(), 
-															  new NoteNode()};
+	private static final Node[] NODE_PROTOTYPES = new Node[] {
+																new StateNode(),
+																new CircularStateNode(),
+																new CircularStateNode(),
+																new NoteNode()
+															  //new ClassNode(), 
+															  //new InterfaceNode(), 
+															  //new PackageNode(), 
+															  //new NoteNode()
+															  };
 	
-	private static final Edge[] EDGE_PROTOTYPES = new Edge[] {new DependencyEdge(), 
-															  new GeneralizationEdge(), 
-															  new GeneralizationEdge(GeneralizationEdge.Type.Implementation),
-															  new AssociationEdge(),
-															  new AggregationEdge(),
-															  new AggregationEdge(AggregationEdge.Type.Composition),
-															  new NoteEdge()};
+	private static final Edge[] EDGE_PROTOTYPES = new Edge[] {
+															  //new DependencyEdge(), 
+															  //new GeneralizationEdge(), 
+															  //new GeneralizationEdge(GeneralizationEdge.Type.Implementation),
+															  //new AssociationEdge(),
+															  //new AggregationEdge(),
+															  //new AggregationEdge(AggregationEdge.Type.Composition),
+															  //new NoteEdge()
+															  };
+	
+	static
+	{
+		((CircularStateNode)NODE_PROTOTYPES[2]).setFinal(true);
+	}
 
 	@Override
 	public Node[] getNodePrototypes()
