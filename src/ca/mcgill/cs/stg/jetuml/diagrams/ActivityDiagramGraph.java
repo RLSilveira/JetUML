@@ -42,6 +42,7 @@ import ca.mcgill.cs.stg.jetuml.graph.NoteEdge;
 import ca.mcgill.cs.stg.jetuml.graph.NoteNode;
 import ca.mcgill.cs.stg.jetuml.graph.PackageNode;
 import ca.mcgill.cs.stg.jetuml.graph.StateNode;
+import ca.mcgill.cs.stg.jetuml.graph.StateTransitionEdge;
 
 /**
  *  A UML class diagram.
@@ -60,6 +61,7 @@ public class ActivityDiagramGraph extends Graph
 															  };
 	
 	private static final Edge[] EDGE_PROTOTYPES = new Edge[] {
+																new StateTransitionEdge()
 															  //new DependencyEdge(), 
 															  //new GeneralizationEdge(), 
 															  //new GeneralizationEdge(GeneralizationEdge.Type.Implementation),
@@ -115,6 +117,7 @@ public class ActivityDiagramGraph extends Graph
 		{
 			return false;
 		}
+		
 		
 		return true;
 	}
