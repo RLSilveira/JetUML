@@ -113,12 +113,10 @@ public class ActivityDiagramGraph extends Graph
 		{
 			return false;
 		}
-		if( pEdge instanceof GeneralizationEdge && pNode1 == pNode2 )
+		if( pEdge instanceof StateTransitionEdge && pNode1 instanceof CircularStateNode && pNode2 instanceof CircularStateNode && !((CircularStateNode)pNode2).isFinal())
 		{
 			return false;
 		}
-		
-		
 		
 		return true;
 	}
