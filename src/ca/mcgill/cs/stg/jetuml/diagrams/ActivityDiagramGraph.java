@@ -53,10 +53,10 @@ public class ActivityDiagramGraph extends Graph
 																new StateNode(),
 																new CircularStateNode(),
 																new CircularStateNode(),
-																new NoteNode()
+																new NoteNode(),
+																new PackageNode()
 															  //new ClassNode(), 
 															  //new InterfaceNode(), 
-															  //new PackageNode(), 
 															  //new NoteNode()
 															  };
 	
